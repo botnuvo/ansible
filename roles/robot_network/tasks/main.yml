@@ -1,0 +1,6 @@
+---
+# Setup networking stuff
+- name: Setup interface to communicate with mainboard
+  template:
+    src: interfaces.j2
+    dest: /etc/network/interfaces

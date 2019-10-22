@@ -3,9 +3,10 @@
   become: yes
   roles:
     - common
-    # robot_network
+    - robot_network
     - ros_user
     - ros1
     # ros1_velocity
   vars:
     rosdistro: melodic
+    interface: eno1
