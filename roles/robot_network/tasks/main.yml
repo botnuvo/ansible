@@ -4,3 +4,8 @@
   template:
     src: interfaces.j2
     dest: /etc/network/interfaces
+
+- name: Setup udev rule for hokuyo laser
+  copy:
+    src: hokuyo
+    dest: /etc/udev/rules.d/51-hokuyo.rules
