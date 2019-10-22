@@ -1,0 +1,6 @@
+---
+# Common computer setup
+- name: Remove the SNUC user
+  user:
+    name: SNUC
+    remove: yes
