@@ -31,6 +31,7 @@
 - name: Start the roscore service
   systemd:
     name: roscore
+    enabled: yes
     state: started
     daemon_reload: yes
 
@@ -41,5 +42,6 @@
 - name: Start the robot service
   systemd:
     name: robot
+    enabled: yes
     state: started
     daemon_reload: yes
