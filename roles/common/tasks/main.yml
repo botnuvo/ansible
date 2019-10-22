@@ -4,3 +4,6 @@
   user:
     name: SNUC
     remove: yes
+- name: Install net-tools (for ifconfig)
+  apt:
+    pkg: net-tools
