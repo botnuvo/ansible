@@ -1,0 +1,14 @@
+---
+# Install ROS1 Packages
+- name: Configure apt key for ROS
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+- name: Configure apt sources for ROS
+  apt_repository:
+    repo: 'deb http://packages.ros.org/ros/ubuntu {{ ansible_lsb.codename }} main'
+    filename: 'ros-latest'
+    update_cache: no
+- name: Install base level ros pacakges
+  apt:
+    pkg: ros-melodic-ros-base
