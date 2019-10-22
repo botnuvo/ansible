@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - common
+    # robot_network
+    - ros_user
+    - ros1
+    # ros1_velocity
+  vars:
+    rosdistro: melodic

@@ -11,4 +11,4 @@
     update_cache: no
 - name: Install base level ros pacakges
   apt:
-    pkg: ros-melodic-ros-base
+    pkg: ros-{{rosdistro}}-ros-base
