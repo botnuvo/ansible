@@ -9,6 +9,6 @@
     repo: 'deb http://packages.ros.org/ros/ubuntu {{ ansible_lsb.codename }} main'
     filename: 'ros-latest'
     update_cache: no
-- name: Install base level ros pacakges
+- name: Install base level ros packages
   apt:
     pkg: ros-{{rosdistro}}-ros-base
