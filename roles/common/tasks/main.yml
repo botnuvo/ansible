@@ -2,8 +2,16 @@
 # Common computer setup
 - name: Remove the SNUC user
   user:
-    name: SNUC
+    name: snuc
+    state: absent
     remove: yes
-- name: Install net-tools (for ifconfig)
+    force: yes
+
+- name: Make sure Botnuvo user has permissions
+  user:
+    name: botnuvo
+    groups: sudo,audio,dialout,plugdev
+
+- name: Install some core tools
   apt:
-    pkg: net-tools
+    pkg: git,openssh-server,net-tools
