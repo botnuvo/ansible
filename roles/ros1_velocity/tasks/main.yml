@@ -1,6 +1,21 @@
 ---
 # Setup Velocity to run in ros1
 
+- name: Allow ros user to shutdown the computer
+  lineinfile:
+    path: /etc/sudoers.d/ros
+    line: 'ros ALL=(root) NOPASSWD: /sbin/poweroff'
+    state: present
+    mode: 0440
+    create: yes
+    validate: 'visudo -cf %s'
+- name: Make sure includedir is in sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    line: "#includedir /etc/sudoers.d"
+    state: present
+    validate: "visudo -cf %s"
+
 # TODO: uncomment this once debs are actually built
 #- name: Install all Velocity packages
 #  apt:
